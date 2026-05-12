@@ -1,6 +1,6 @@
 # Clase11-05-2026-Cultura_Digital
 Estudiante: Lesly Keliana Carrasco Mejía 
-# Proyecto desarrollado en Python que permite administrar tareas desde consola.
+### Proyecto desarrollado en Python que permite administrar tareas desde consola.
 
 ## Funcionalidades
 
