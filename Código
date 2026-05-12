@@ -1,0 +1,75 @@
+# Proyecto Python: Sistema de Gestión de Tareas
+
+## Archivo: `main.py`
+
+# SISTEMA DE GESTIÓN DE TAREAS
+# Nombre: Lesly Keliana Carrasco Mejía 
+
+# Lista para almacenar las tareas
+lista_tareas = []
+
+# Función para agregar tareas
+
+def agregar_tarea():
+    tarea = input("Ingrese una nueva tarea: ")
+    lista_tareas.append(tarea)
+    print(" Tarea agregada correctamente")
+
+# Función para mostrar tareas
+
+def mostrar_tareas():
+    if len(lista_tareas) == 0:
+        print("⚠️ No existen tareas registradas")
+    else:
+        print("\n LISTA DE TAREAS")
+        for i, tarea in enumerate(lista_tareas, start=1):
+            print(f"{i}. {tarea}")
+
+# Función para eliminar tareas
+
+def eliminar_tarea():
+    mostrar_tareas()
+
+    if len(lista_tareas) > 0:
+        try:
+            indice = int(input("Ingrese el número de la tarea a eliminar: "))
+
+            if 1 <= indice <= len(lista_tareas):
+                tarea_eliminada = lista_tareas.pop(indice - 1)
+                print(f" Tarea eliminada: {tarea_eliminada}")
+            else:
+                print(" Número inválido")
+
+        except ValueError:
+            print(" Debe ingresar un número")
+
+# Menú principal
+
+def menu():
+    while True:
+        print("\n========= MENÚ =========")
+        print("1. Agregar tarea")
+        print("2. Mostrar tareas")
+        print("3. Eliminar tarea")
+        print("4. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            agregar_tarea()
+
+        elif opcion == "2":
+            mostrar_tareas()
+
+        elif opcion == "3":
+            eliminar_tarea()
+
+        elif opcion == "4":
+            print(" Programa finalizado")
+            break
+
+        else:
+            print(" Opción inválida")
+
+# Ejecutar programa
+menu()
